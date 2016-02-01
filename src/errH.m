@@ -1,21 +1,21 @@
 #*************************************************************************************************************************
 #
-#Copyright or © or Copr.[DGFIP][2015]
+#Copyright or Â© or Copr.[DGFIP][2015]
 #
-#Ce logiciel a été initialement développé par la Direction Générale des 
-#Finances Publiques pour permettre le calcul de l'impôt sur le revenu 2015 
-#au titre des revenus perçus en 2014. La présente version a permis la 
-#génération du moteur de calcul des chaînes de taxation des rôles d'impôt 
-#sur le revenu de ce millésime.
+#Ce logiciel a Ã©tÃ© initialement dÃ©veloppÃ© par la Direction GÃ©nÃ©rale des 
+#Finances Publiques pour permettre le calcul de l'impÃ´t sur le revenu 2015 
+#au titre des revenus perÃ§us en 2014. La prÃ©sente version a permis la 
+#gÃ©nÃ©ration du moteur de calcul des chaÃ®nes de taxation des rÃ´les d'impÃ´t 
+#sur le revenu de ce millÃ©sime.
 #
-#Ce logiciel est régi par la licence CeCILL 2.1 soumise au droit français 
+#Ce logiciel est rÃ©gi par la licence CeCILL 2.1 soumise au droit franÃ§ais 
 #et respectant les principes de diffusion des logiciels libres. Vous pouvez 
 #utiliser, modifier et/ou redistribuer ce programme sous les conditions de 
-#la licence CeCILL 2.1 telle que diffusée par le CEA, le CNRS et l'INRIA  sur 
+#la licence CeCILL 2.1 telle que diffusÃ©e par le CEA, le CNRS et l'INRIA  sur 
 #le site "http://www.cecill.info".
 #
-#Le fait que vous puissiez accéder à cet en-tête signifie que vous avez pris 
-#connaissance de la licence CeCILL 2.1 et que vous en avez accepté les termes.
+#Le fait que vous puissiez accÃ©der Ã  cet en-tÃªte signifie que vous avez pris 
+#connaissance de la licence CeCILL 2.1 et que vous en avez acceptÃ© les termes.
 #
 #**************************************************************************************************************************
 A000:anomalie :"A":"000":"00":"SAISIE D UN MONTANT NEGATIF":"N";

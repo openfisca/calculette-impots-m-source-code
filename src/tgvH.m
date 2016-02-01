@@ -1,21 +1,21 @@
 #*************************************************************************************************************************
 #
-#Copyright or © or Copr.[DGFIP][2015]
+#Copyright or Â© or Copr.[DGFIP][2015]
 #
-#Ce logiciel a été initialement développé par la Direction Générale des 
-#Finances Publiques pour permettre le calcul de l'impôt sur le revenu 2015 
-#au titre des revenus perçus en 2014. La présente version a permis la 
-#génération du moteur de calcul des chaînes de taxation des rôles d'impôt 
-#sur le revenu de ce millésime.
+#Ce logiciel a Ã©tÃ© initialement dÃ©veloppÃ© par la Direction GÃ©nÃ©rale des 
+#Finances Publiques pour permettre le calcul de l'impÃ´t sur le revenu 2015 
+#au titre des revenus perÃ§us en 2014. La prÃ©sente version a permis la 
+#gÃ©nÃ©ration du moteur de calcul des chaÃ®nes de taxation des rÃ´les d'impÃ´t 
+#sur le revenu de ce millÃ©sime.
 #
-#Ce logiciel est régi par la licence CeCILL 2.1 soumise au droit français 
+#Ce logiciel est rÃ©gi par la licence CeCILL 2.1 soumise au droit franÃ§ais 
 #et respectant les principes de diffusion des logiciels libres. Vous pouvez 
 #utiliser, modifier et/ou redistribuer ce programme sous les conditions de 
-#la licence CeCILL 2.1 telle que diffusée par le CEA, le CNRS et l'INRIA  sur 
+#la licence CeCILL 2.1 telle que diffusÃ©e par le CEA, le CNRS et l'INRIA  sur 
 #le site "http://www.cecill.info".
 #
-#Le fait que vous puissiez accéder à cet en-tête signifie que vous avez pris 
-#connaissance de la licence CeCILL 2.1 et que vous en avez accepté les termes.
+#Le fait que vous puissiez accÃ©der Ã  cet en-tÃªte signifie que vous avez pris 
+#connaissance de la licence CeCILL 2.1 et que vous en avez acceptÃ© les termes.
 #
 #**************************************************************************************************************************
 application bareme;
@@ -2262,7 +2262,7 @@ COD7WD : saisie revenu classe = 0 priorite = 31 categorie_TL = 40 cotsoc = 5 ind
 COD7WU : saisie revenu classe = 0 priorite = 50 categorie_TL = 40 cotsoc = 5 ind_abat = 0 acompte = 1 avfisc = 1 rapcat = 10 sanction = 0 nat_code = 1 alias 7WU : "Travaux sur au moins 50 % des fenetres du 1-9 au 31-12-2014" type REEL ;
 COD7WX : saisie revenu classe = 0 priorite = 50 categorie_TL = 40 cotsoc = 5 ind_abat = 0 acompte = 1 avfisc = 1 rapcat = 10 sanction = 0 nat_code = 1 alias 7WX : "Base du CIDD a 15%" type REEL ;
 COD8PA : saisie revenu classe = 0 priorite = 51 categorie_TL = 10 cotsoc = 5 ind_abat = 0 acompte = 1 avfisc = 0 rapcat = 10 sanction = 0 nat_code = 1 restituee alias 8PA : "Plafond calcule pour credit declare en 8TA (impot paye a l'etranger)" ;
-COD8PQ : saisie revenu classe = 0 priorite = 51 categorie_TL = 20 cotsoc = 10 ind_abat = 0 acompte = 1 avfisc = 0 rapcat = 11 sanction = 0 nat_code = 0 restituee alias 8PQ : "Base PS des non résidents hors EEE" ;
+COD8PQ : saisie revenu classe = 0 priorite = 51 categorie_TL = 20 cotsoc = 10 ind_abat = 0 acompte = 1 avfisc = 0 rapcat = 11 sanction = 0 nat_code = 0 restituee alias 8PQ : "Base PS des non rÃ©sidents hors EEE" ;
 COD8SA : saisie revenu classe = 0 priorite = 51 categorie_TL = 20 cotsoc = 12 ind_abat = 0 acompte = 0 avfisc = 0 rapcat = 4 sanction = 0 nat_code = 0 restituee alias 8SA : "Pensions en capital prelevement de 7,5% (6,6%)" type REEL ;
 COD8SB : saisie revenu classe = 0 priorite = 51 categorie_TL = 20 cotsoc = 14 ind_abat = 0 acompte = 0 avfisc = 0 rapcat = 4 sanction = 0 nat_code = 0 restituee alias 8SB : "Pensions en capital prelevement de 7,5% (3,8%)" type REEL ;
 COD8TL : saisie revenu classe = 0 priorite = 50 categorie_TL = 10 cotsoc = 5 ind_abat = 0 acompte = 1 avfisc = 0 rapcat = 10 sanction = 0 nat_code = 1 restituee alias 8TL : "Credit d'impot competitivite et emploi restituable" ;
@@ -9090,7 +9090,7 @@ PRC : calculee restituee : "Pensions, retraites, rentes" ;
 PRDS : calculee restituee : "PENALITES DE LA CRDS" ;
 PRDSD : calculee : "penalites RDS" ;
 PRDS_A : calculee base : "PENALITES DE LA RDS" ;
-PREGV : calculee restituee : "Penalites régularisation assurance vie" ;
+PREGV : calculee restituee : "Penalites rÃ©gularisation assurance vie" ;
 PREGV_A : calculee base : "Penalites de la regul assur vie anterieur" ;
 PREHAB : calculee restituee : "declar? habitation principale " ;
 PREHABT : saisie revenu classe = 0 priorite = 51 categorie_TL = 10 cotsoc = 5 ind_abat = 0 acompte = 1 avfisc = 1 rapcat = 10 sanction = 0 nat_code = 1 alias 7VX : "Interets pret habitation principale (label BBC) - taux 40 %" ;
@@ -12279,7 +12279,7 @@ SOMMERFTOUT : calculee base : "Somme rev BA pour  1731bis" ;
 SOMMERF_1 : calculee base : "Somme rev BIC pour art 1731bis  hors" ;
 SOMMERF_2 : calculee base : "Somme rev BIC pour art 1731bis  avec" ;
 SOMMERF_P : calculee base : "Correctif: Somme rev   pour 1731" ;
-SOMMERI_1 : calculee base : "Somme des réductions et autres sommes_1 pour article1731bis" ;
+SOMMERI_1 : calculee base : "Somme des rÃ©ductions et autres sommes_1 pour article1731bis" ;
 SOMMERI_2 : calculee base : "Somme reductions pour art 1731bis  avec" ;
 SPEABC : calculee : "Abattement forfaitaire conjoint BNC regime special" ;
 SPEABNPC : calculee restituee : "Abattement forfaitaire conj BNC regime special non professionnel" ;
