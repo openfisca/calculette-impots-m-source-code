@@ -12,7 +12,7 @@ Les fichiers contenus dans cette archive sont :
 
 - [`tgvH.m`](src/tgvH.m) : Tableau général des variables qui assure la correspondance entre les codes issus de la 2042 et les variables internes au calcul, les variables de calcul et les variables restituées par la calculette IR
 - [`errH.m`](src/errH.m) : Fichier décrivant les différentes anomalies
-- `coi[x].m`, `coc[x].m`, `horizoc.m`, `horizoi.m` : Fichiers de gestion des anomalies de la calculette
+- `coi[x].m`, `coc[x].m`, [`horizoc.m`](src/horizoc.m), [`horizoi.m`](src/horizoi.m) : Fichiers de gestion des anomalies de la calculette
 - `chap-[xxx].m`, [`res-ser1.m`](src/res-ser1.m), [`res-ser2.m`](src/res-ser2.m) : Fichiers comportant les différentes règles de calcul pour un ensemble fonctionnel cohérent.
 
   Exemples :
