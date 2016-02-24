@@ -19,3 +19,7 @@ Les fichiers contenus dans cette archive sont :
   - [`chap-1.m`](src/chap-1.m) contient les règles de calcul du montant net
   - [`chap-isf.m`](src/chap-isf.m) contient les règles de calcul de l'ISF
   - [`chap-perp.m`](src/chap-perp.m) contient les règles de calcul des déductions pour verserment sur un Plan d'Epargne Retraite Populaire
+
+## Variables remarquables
+
+- IINET : montant net à payer
