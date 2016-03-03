@@ -22,4 +22,12 @@ Les fichiers contenus dans cette archive sont :
 
 ## Variables remarquables
 
+Variables calculées :
+
 - IINET : montant net à payer
+
+Variables saisies :
+
+- TSHALLOV (1AJ) : Salaires - Declarant 1
+
+## The missing manual
