@@ -1,6 +1,6 @@
 # Code source des impôts sur les revenus
 
-## Contenu des fichiers sources mis à disposition des usagers
+## Contenu
 
 Les fichiers contenus dans l'archive sont l'ensemble des fichiers de paramétrage utilisés par les services informatiques de la Direction Générale des Finances Publiques pour réaliser la taxation des foyers fiscaux (IR, ISF, CSG).
 
@@ -16,18 +16,95 @@ Les fichiers contenus dans cette archive sont :
 - `chap-[xxx].m`, [`res-ser1.m`](src/res-ser1.m), [`res-ser2.m`](src/res-ser2.m) : Fichiers comportant les différentes règles de calcul pour un ensemble fonctionnel cohérent.
 
   Exemples :
-  - [`chap-1.m`](src/chap-1.m) contient les règles de calcul du montant net
+  - [`chap-1.m`](src/chap-1.m) contient les règles de calcul du montant net à payer
+  - [`chap-2.m`](src/chap-2.m) contient les règles de calcul du montant net à payer
+  - [`chap-51.m`](src/chap-51.m) contient les règles calcul des droits simples résultant du taux progressif
   - [`chap-isf.m`](src/chap-isf.m) contient les règles de calcul de l'ISF
   - [`chap-perp.m`](src/chap-perp.m) contient les règles de calcul des déductions pour verserment sur un Plan d'Epargne Retraite Populaire
 
-## Variables remarquables
+## The missing manual
+
+Cette section contient des informations devinées en lisant les fichiers du code source, durant le processus d'écriture du [parser](https://git.framasoft.org/openfisca/m-language-parser) et du [compilateur en Python](https://git.framasoft.org/openfisca/calculateur-impots-python).
+
+Un tag `FIXME` est placé lorsqu'une information est manquante et qu'il faut la compléter.
+
+### Applications
+
+Les formules déclarées sont taggées par un ou plusieurs noms d'application.
+
+Exemple :
+
+```impots-m
+regle 700:
+application : bareme , iliad , batch  ;
+pour z=1,2:
+RB5z = max( 0, RB0z + TETONEQUO1) ;
+RB55 = max( 0, RB05 + TETONEQUOM1) ;
+```
+
+- `batch` est utilisée pour le calcul primitif de l'impôt
+- `iliad` est utilisée pour le calcul correctif de l'impôt
+- `FIXME` les autres applications
+
+### Variables
+
+Les variables sont de plusieurs types :
+
+- Les variables saisies correspondent aux cases de la déclaration des revenus (par exemple `1AJ`).
+  Le nom de la variable n'est pas celui de la case.
+- Les variables calculées ont une formule qui, une fois calculées, leur affecte une valeur.
+- Les variables de base sont des variables d'environnement qui sont affectées avant le début du calcul.
+
+Le fichier [`tgvH.m`](src/tgvH.m) définit des variables via plusieurs champs :
+
+- `code` (`string`, unique) : le code unique de la variable
+- `type` (`enum(calculee, const, saisie)`) : le type de variable
+- `FIXME` les autres champs
+
+Exemples :
+
+```impots-m
+10MINS1 : calculee : "deductions hors droits d'auteur plafonnees" ;
+10MINS1TOUT : calculee base : "10 pourcent TS dernier evt pour calcul de DEFRI" ;
+4BACREP : saisie revenu classe = 2 priorite = 10 categorie_TL = 20 cotsoc = 5 ind_abat = 0 acompte = 1 avfisc = 0 rapcat = 8 sanction = 2 nat_code = 0 alias CJC : "BA exceptionnels sous CGA - Quotient 4 - PAC" ;
+```
+
+### Formules
+
+`FIXME`
+
+### Erreurs
+
+Le fichier [`errH.m`](src/errH.m) définit des erreurs via plusieurs champs :
+
+- `code` (`string`, unique) : le code unique de l'erreur
+- `type` (`enum(anomalie, discordance, informative)`) : le type d'erreur
+- `type_code` (`enum(A, D, I)`) : le code du type d'erreur (semble redondant avec `type`)
+
+
+Exemple :
+
+```impots-m
+A000:anomalie :"A":"000":"00":"SAISIE D UN MONTANT NEGATIF":"N";
+```
+
+### Vérifications
+
+- [`coi1.m`](src/coi1.m) décleche uniquement des erreurs de type `discordance`
+- [`coi2.m`](src/coi2.m) et [`coi3.m`](src/coi3.m) déclechent uniquement des erreurs de type `informative`
+- `coc*.m` déclechent uniquement des erreurs de type `anomalie`
+- [`horizoc.m`](src/horizoc.m) et [`horizoi.m`](src/horizoi.m) déclechent uniquement des erreurs de type `anomalie`, et les vérifications concernent uniquement l'application `iliad`
+
+### Variables remarquables
 
 Variables calculées :
 
-- IINET : montant net à payer
+- `IINET` : montant net à payer
 
 Variables saisies :
 
-- TSHALLOV (1AJ) : Salaires - Declarant 1
+- `TSHALLOV` (`1AJ`) : Salaires - Declarant 1
 
-## The missing manual
+### Questions métier
+
+- qu'est-ce que le calcul correctif horizontal ? (cf `horizoc.m`: `verif corrective horizontale 760`)
