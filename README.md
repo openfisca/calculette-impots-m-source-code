@@ -19,6 +19,7 @@ Les fichiers contenus dans cette archive sont :
   - [`chap-1.m`](src/chap-1.m) contient les règles de calcul du montant net à payer
   - [`chap-2.m`](src/chap-2.m) contient les règles de calcul du montant net à payer
   - [`chap-51.m`](src/chap-51.m) contient les règles calcul des droits simples résultant du taux progressif
+  - [`chap-55.m`](src/chap-55.m) contient les règles calcul des droits simples résultant du taux progressif
   - [`chap-isf.m`](src/chap-isf.m) contient les règles de calcul de l'ISF
   - [`chap-perp.m`](src/chap-perp.m) contient les règles de calcul des déductions pour verserment sur un Plan d'Epargne Retraite Populaire
 
