@@ -26,7 +26,7 @@ Les fichiers contenus dans cette archive sont :
 
 ## The missing manual
 
-Cette section contient des informations devinées en lisant les fichiers du code source, durant le processus d'écriture du [parser](https://git.framasoft.org/openfisca/m-language-parser) et du [compilateur en Python](https://git.framasoft.org/openfisca/calculateur-impots-python).
+Cette section contient des informations devinées en lisant les fichiers du code source, durant le processus d'écriture du [parser](https://git.framasoft.org/openfisca/m-language-parser) et du [compilateur en Python](https://git.framasoft.org/openfisca/calculette-impots-python).
 
 Un tag `FIXME` est placé lorsqu'une information est manquante et qu'il faut la compléter.
 
