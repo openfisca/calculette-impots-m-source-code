@@ -6,23 +6,14 @@ Les fichiers contenus dans l'archive sont l'ensemble des fichiers de paramétrag
 
 Ces fichiers sont développés sous licence CeCILL 2.1 soumise au droit français et respectant les principes de diffusion des logiciels libres.
 
-La version retenue est la 2.5 qui a servi au cours de l'année 2015 pour produire les avis d'impôt sur les revenus 2014.
+Cette version est la 2.5 qui a servi au cours de l'année 2015 pour produire les avis d'impôt sur les revenus 2014.
 
-Les fichiers contenus dans cette archive sont :
+Les fichiers contenus dans le répertoire `src` sont :
 
 - [`tgvH.m`](src/tgvH.m) : Tableau général des variables qui assure la correspondance entre les codes issus de la 2042 et les variables internes au calcul, les variables de calcul et les variables restituées par la calculette IR
 - [`errH.m`](src/errH.m) : Fichier décrivant les différentes anomalies
-- `coi[x].m`, `coc[x].m`, [`horizoc.m`](src/horizoc.m), [`horizoi.m`](src/horizoi.m) : Fichiers de gestion des anomalies de la calculette
-- `chap-[xxx].m`, [`res-ser1.m`](src/res-ser1.m), [`res-ser2.m`](src/res-ser2.m) : Fichiers comportant les différentes règles de calcul pour un ensemble fonctionnel cohérent.
-
-  Exemples :
-  - [`chap-1.m`](src/chap-1.m) contient les règles de calcul du montant net à payer
-  - [`chap-2.m`](src/chap-2.m) contient les règles de calcul du montant net à payer
-  - [`chap-51.m`](src/chap-51.m) contient les règles de calcul des droits simples résultant du taux progressif
-  - [`chap-55.m`](src/chap-55.m) contient les règles de calcul des droits simples résultant du taux progressif
-  - [`chap-6.m`](src/chap-6.m) contient les règles de calcul du nombre de parts
-  - [`chap-isf.m`](src/chap-isf.m) contient les règles de calcul de l'ISF
-  - [`chap-perp.m`](src/chap-perp.m) contient les règles de calcul des déductions pour verserment sur un Plan d'Epargne Retraite Populaire
+- `coiX.m`, `cocX.m`, [`horizoc.m`](src/horizoc.m), [`horizoi.m`](src/horizoi.m) : Fichiers de gestion des anomalies de la calculette
+- `chap-X.m`, [`res-ser1.m`](src/res-ser1.m), [`res-ser2.m`](src/res-ser2.m) : Fichiers comportant les différentes règles de calcul pour un ensemble fonctionnel cohérent.
 
 ## The missing manual
 
@@ -32,7 +23,7 @@ Un tag `FIXME` est placé lorsqu'une information est manquante et qu'il faut la 
 
 ### Applications
 
-Les formules déclarées sont taggées par un ou plusieurs noms d'application.
+Les règles déclarées sont qualifiées par un ou plusieurs noms d'application.
 
 Exemple :
 
@@ -44,6 +35,8 @@ RB5z = max( 0, RB0z + TETONEQUO1) ;
 RB55 = max( 0, RB05 + TETONEQUOM1) ;
 ```
 
+Les applications identifiées jusque là sont :
+
 - `batch` est utilisée pour le calcul primitif de l'impôt
 - `iliad` est utilisée pour le calcul correctif de l'impôt
 - `FIXME` les autres applications
@@ -53,15 +46,10 @@ RB55 = max( 0, RB05 + TETONEQUOM1) ;
 Les variables sont de plusieurs types :
 
 - Les variables saisies correspondent aux cases de la déclaration des revenus (par exemple `1AJ`).
-  Le nom de la variable n'est pas celui de la case.
-- Les variables calculées ont une formule qui, une fois calculées, leur affecte une valeur.
-- Les variables de base sont des variables d'environnement qui sont affectées avant le début du calcul.
+- Les variables calculées ont une formule qui renvoie la valeur de la variable.
+- Les variables calculées de base sont des variables qui peuvent être affectées avant le début du calcul.
 
-Le fichier [`tgvH.m`](src/tgvH.m) définit des variables via plusieurs champs :
-
-- `code` (`string`, unique) : le code unique de la variable
-- `type` (`enum(calculee, const, saisie)`) : le type de variable
-- `FIXME` les autres champs
+Le fichier [`tgvH.m`](src/tgvH.m) définit des variables via plusieurs champs qui varient selon le type.
 
 Exemples :
 
@@ -73,7 +61,15 @@ Exemples :
 
 ### Formules
 
-`FIXME`
+Quelques exemples de fichiers contenant des formules :
+
+- [`chap-1.m`](src/chap-1.m) contient les règles de calcul du montant net à payer
+- [`chap-2.m`](src/chap-2.m) contient les règles de calcul du montant net à payer
+- [`chap-51.m`](src/chap-51.m) contient les règles de calcul des droits simples résultant du taux progressif
+- [`chap-55.m`](src/chap-55.m) contient les règles de calcul des droits simples résultant du taux progressif
+- [`chap-6.m`](src/chap-6.m) contient les règles de calcul du nombre de parts
+- [`chap-isf.m`](src/chap-isf.m) contient les règles de calcul de l'ISF
+- [`chap-perp.m`](src/chap-perp.m) contient les règles de calcul des déductions pour verserment sur un Plan d'Epargne Retraite Populaire
 
 ### Erreurs
 
@@ -82,7 +78,6 @@ Le fichier [`errH.m`](src/errH.m) définit des erreurs via plusieurs champs :
 - `code` (`string`, unique) : le code unique de l'erreur
 - `type` (`enum(anomalie, discordance, informative)`) : le type d'erreur
 - `type_code` (`enum(A, D, I)`) : le code du type d'erreur (semble redondant avec `type`)
-
 
 Exemple :
 
@@ -101,7 +96,7 @@ A000:anomalie :"A":"000":"00":"SAISIE D UN MONTANT NEGATIF":"N";
 
 Variables calculées :
 
-- `IINET` : montant net à payer
+- `IRN` : Impot net ou restitution nette
 
 Variables saisies :
 
