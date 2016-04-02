@@ -70,6 +70,14 @@ Quelques exemples de fichiers contenant des formules :
 - [`chap-6.m`](src/chap-6.m) contient les règles de calcul du nombre de parts
 - [`chap-isf.m`](src/chap-isf.m) contient les règles de calcul de l'ISF
 - [`chap-perp.m`](src/chap-perp.m) contient les règles de calcul des déductions pour verserment sur un Plan d'Epargne Retraite Populaire
+inr intérêts de retard (correctif)
+cinr cumul  (correctif)
+majo majorations (correctif)
+cmajo cumul majorations (correctif)
+
+TL => tolérance légale
+
+calculée base => correctif pour éviter d'écraser les valeurs issues de batch, et stockées en base de données
 
 ### Erreurs
 
