@@ -75,6 +75,9 @@ cinr cumul  (correctif)
 majo majorations (correctif)
 cmajo cumul majorations (correctif)
 
+coc => contrôle bloquant
+coi => informatif
+
 TL => tolérance légale
 
 calculée base => correctif pour éviter d'écraser les valeurs issues de batch, et stockées en base de données
